@@ -1,0 +1,111 @@
+<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organization Chart</title>
+	 <p><font><h1 align="center" size="20" face="baby school"> Organization Chart </font></p>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f7f5;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        table {
+            border-collapse: collapse;
+            text-align: center;
+            margin: 0 auto;
+        }
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        .box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .photo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 5px;
+        }
+        .name {
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .title {
+            font-size: 10px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <!-- Leader -->
+        <tr>
+            <td colspan="4">
+                <div class="box">
+                    <img src="images/leader.jpg" alt="Leader" class="photo">
+                    <p class="name">Nurul Aimi Umairoh </p>
+                    <p class="title">Cafe Owner</p>
+                </div>
+            </td>
+        </tr>
+        <!-- Teams -->
+        <tr  bgcolor="#B2456E" >
+            <td colspan="2">
+                <div class="box">
+        
+                    <p class="name">Human Resources (HR) Team</p>
+                </div>
+            </td>
+            <td colspan="2">
+                <div class="box">
+                    
+                    <p class="name">Marketing Team</p>
+                </div>
+            </td>
+        </tr>
+        <!-- Employees -->
+        <tr>
+            <td>
+                <div class="box">
+                    <img src="images/head-hr.jpg" alt="Employee" class="photo">
+                    <p class="name">Nur Diyanah Nabila</p>
+                    <p class="title">Head of HR</p>
+                </div>
+            </td>
+            <td>
+                <div class="box">
+                    <img src="images/hr.jpg" alt="Employee" class="photo">
+                    <p class="name">Syasya Nabilah</p>
+                    <p class="title">HR Assistant</p>
+                </div>
+            </td>
+            <td>
+                <div class="box">
+                    <img src="images/marketing.jpg" alt="Employee" class="photo">
+                    <p class="name">Nur Illy Syamimi</p>
+                    <p class="title">Marketing Executive</p>
+                </div>
+            </td>
+            <td>
+                <div class="box">
+                    <img src="images/marketing-1.jpg" alt="Employee" class="photo">
+                    <p class="name">Nur Aisyah </p>
+                    <p class="title">Marketing Assistant</p>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

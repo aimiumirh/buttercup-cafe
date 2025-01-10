@@ -6,6 +6,8 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="images/logo.jpg" type="image/jpg" sizes="16x16"> <!-- Favicon -->
   <link rel="stylesheet" href="hover.css" type="text/css"> <!-- Hover Effects CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"> <!--star-->
+
   
 </head>
 <body>
@@ -30,13 +32,68 @@
     </td>
   </tr>
 
+	<br></br>
+  <table style="width: 100%; max-width: 600px; margin: auto; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9; padding: 20px;">
+  <!-- Form Header -->
   <tr>
-    <!-- Body -->
-    <td colspan="3" class="body">
-      <h2>Start Your Day With Fresh Coffee</h2>
-      <p>Amazing coffee that gives you the energy to start your day with a smile!</p>
+    <td colspan="2" style="text-align: center; padding: 20px;">
+      <h2>Tell Us What You Think</h2>
     </td>
   </tr>
+  <!-- Name Input -->
+  <tr>
+	<form action="mailto:aimiumirh@gmail.com method="POST" enctype="text/plain">
+    <td style="padding: 10px; text-align: right; vertical-align: middle;">Name:</td>
+    <td style="padding: 10px;">
+      <input 
+        type="text" 
+        placeholder="Enter your name" 
+        style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+    </td>
+  </tr>
+  <!-- Email Input -->
+  <tr>
+    <td style="padding: 10px; text-align: right; vertical-align: middle;">Email:</td>
+    <td style="padding: 10px;">
+      <input 
+        type="email" 
+        placeholder="Enter your email" 
+        style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+    </td>
+  </tr>
+  <!-- Comment Input -->
+  <tr>
+    <td style="padding: 10px; text-align: right; vertical-align: top;">Comment:</td>
+    <td style="padding: 10px;">
+      <textarea 
+        placeholder="Tell us what you think" 
+        style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; height: 100px;"></textarea>
+    </td>
+  </tr>
+  <!-- Rating -->
+  <tr>
+    <td style="padding: 10px; text-align: right; vertical-align: middle;">Rating:</td>
+    <td style="padding: 10px; text-align: center;">
+      <div id="star-rating" style="font-size: 1.5rem; color: #FFD700;">
+        <i class="fa fa-star" data-value="1"></i>
+		<i class="fa fa-star" data-value="2"></i>
+		<i class="fa fa-star" data-value="3"></i>
+		<i class="fa fa-star" data-value="4"></i>
+		<i class="fa fa-star" data-value="5"></i>
+      </div>
+    </td>
+  </tr>
+  <!-- Submit Button -->
+  <tr>
+    <td colspan="2" style="text-align: center; padding: 20px;">
+      <input 
+        type="submit" 
+        value="Submit" 
+        style="padding: 10px 20px; background-color: grey; color: white; border: none; border-radius: 4px; cursor: pointer;">
+    </td>
+  </tr>
+</table>
+
   
   <tr>
 	<!-- Back to Top Link -->
@@ -71,6 +128,44 @@
     </tr>
   </table>
 </footer>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const stars = document.querySelectorAll("#star-rating .fa-star");
+
+    // Highlight stars based on hover
+    stars.forEach((star, index) => {
+      star.addEventListener("mouseover", () => {
+        resetStars();
+        for (let i = 0; i <= index; i++) {
+          stars[i].classList.add("active");
+        }
+      });
+
+      star.addEventListener("mouseout", resetStars);
+
+      // Set the rating on click
+      star.addEventListener("click", () => {
+        resetStars();
+        for (let i = 0; i <= index; i++) {
+          stars[i].classList.add("selected");
+        }
+        alert(`You selected ${index + 1} stars!`);
+      });
+    });
+
+    // Reset stars to show the selected state
+    function resetStars() {
+      stars.forEach((star) => {
+        star.classList.remove("active");
+        star.classList.remove("selected");
+      });
+      const selectedStars = document.querySelectorAll("#star-rating .fa-star.selected");
+      selectedStars.forEach((star) => {
+        star.classList.add("active");
+      });
+    }
+  });
+</script>
 
 </body>
 </html>

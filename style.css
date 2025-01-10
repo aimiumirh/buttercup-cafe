@@ -274,4 +274,76 @@ footer {
                 transform: translateY(-5px);
             }
         }
+		
+/*feedback section*/
+/* Header Styling */
+table h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin: 0;
+}
+
+/* Input Fields and Textarea */
+table input[type="text"],
+table input[type="email"],
+table textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #333;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+table textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+/* Submit Button */
+table input[type="submit"] {
+  padding: 10px 20px;
+  background-color: grey;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+table input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Rating Styling */
+table .fa-star {
+  font-size: 1.5rem;
+  color: #FFD700;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+table .fa-star:hover,
+table .fa-star:hover ~ .fa-star {
+  color: #FFD700;
+}
+
+  #star-rating .fa-star {
+    transition: color 0.2s ease;
+  }
+  #star-rating .fa-star.active {
+    color: #FFD700;
+  }
+  #star-rating .fa-star:hover {
+    color: #FFC107;
+  }
+
+
+
+
+
+	
 

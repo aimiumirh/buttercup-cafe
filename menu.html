@@ -39,101 +39,63 @@
       <h3>Buttercup Café Student-Friendly Menu</h3>
       <p><i>Affordable bites and drinks for students! Just show your student ID.</i></p>
       
-      <h4>Coffee & Espresso</h4>
-      <ul>
-        <li><span>Espresso</span> <span class="price">RM3.00</span> <button class="add-to-cart" onclick="addToCart('Espresso', 3.00)">Add to Cart</button></li>
-        <li><span>Americano</span> <span class="price">RM4.00</span> <button class="add-to-cart" onclick="addToCart('Americano', 4.00)">Add to Cart</button></li>
-        <li><span>Cappuccino</span> <span class="price">RM5.00</span> <button class="add-to-cart" onclick="addToCart('Cappuccino', 5.00)">Add to Cart</button></li>
-        <li><span>Latte</span> <span class="price">RM6.00</span> <button class="add-to-cart" onclick="addToCart('Latte', 6.00)">Add to Cart</button></li>
-        <li><span>Mocha</span> <span class="price">RM7.00</span> <button class="add-to-cart" onclick="addToCart('Mocha', 7.00)">Add to Cart</button></li>
-      </ul>
-      
-      <h4>Tea & Refreshments</h4>
-      <ul>
-        <li><span>English Breakfast Tea</span> <span class="price">RM4.00</span> <button class="add-to-cart" onclick="addToCart('English Breakfast Tea', 4.00)">Add to Cart</button></li>
-        <li><span>Green Tea</span> <span class="price">RM4.00</span> <button class="add-to-cart" onclick="addToCart('Green Tea', 4.00)">Add to Cart</button></li>
-        <li><span>Iced Lemon Tea</span> <span class="price">RM5.00</span> <button class="add-to-cart" onclick="addToCart('Iced Lemon Tea', 5.00)">Add to Cart</button></li>
-        <li><span>Hot Chocolate</span> <span class="price">RM6.00</span> <button class="add-to-cart" onclick="addToCart('Hot Chocolate', 6.00)">Add to Cart</button></li>
-      </ul>
-      
-      <h4>Student Specials</h4>
-      <ul>
-       <li><span>ButterCup Cold Brew</span> <span class="price">RM6.00</span> <button class="add-to-cart" onclick="addToCart('ButterCup Cold Brew', 6.00)">Add to Cart</button></li>
-       <li><span>Honeycomb Latte</span> <span class="price">RM8.00</span> <button class="add-to-cart" onclick="addToCart('Honeycomb Latte', 8.00)">Add to Cart</button></li>
-       <li><span>Signature Affogato</span> <span class="price">RM9.00</span> <button class="add-to-cart" onclick="addToCart('Signature Affogato', 9.00)">Add to Cart</button></li>
-      </ul>
-    </div>
-  </td>
-</tr>
-<tr>
-<td>
-  <div class="cart">
-        <h2>Order Cart</h2>
-        <ul id="cart-items" class="cart-items">
-            <!-- Items will be dynamically added here -->
-        </ul>
-        <p id="total-price">Total: RM0.00</p>
-        <div class="checkout">
-            <button onclick="checkout()">Checkout</button>
+      <body>
+    <h1 style="text-align: center; margin-top: 20px;">Our Menu</h1>
+    <div class="menu-container">
+        <!-- Menu Item 1 -->
+        <div class="menu-item">
+            <img src="image/chocolate cake.jpg" alt="chocolate cake">
+			<h3>Desserts</h3>
+            <div class="submenu">
+                <div class="submenu-item">Spring Rolls</div>
+                <div class="submenu-item">Chicken Wings</div>
+                <div class="submenu-item">Nachos</div>
+            </div>
+        </div>
+        <!-- Menu Item 2 -->
+        <div class="menu-item">
+            <img src="image/coffee2.jpg" alt="coffee2">
+			<h3>Coffee & Espresso</h3>
+            <div class="submenu">
+                <div class="submenu-item">Chocolate Cake</div>
+                <div class="submenu-item">Cheesecake</div>
+                <div class="submenu-item">Ice Cream</div>
+            </div>
+        </div>
+        <!-- Menu Item 3 -->
+        <div class="menu-item">
+            <img src="image/pasta.jpg" alt="pasta">
+			<h3>Pasta</h3>
+            <div class="submenu">
+                <div class="submenu-item">Coffee</div>
+                <div class="submenu-item">Tea</div>
+                <div class="submenu-item">Smoothies</div>
+            </div>
+        </div>
+		
+		<div class="menu-item">
+            <img src="image/ice lemon tea.jpg" alt="ice lemon tea">
+			<h3>Tea & Refeshment</h3>
+            <div class="submenu">
+                <div class="submenu-item">Coffee</div>
+                <div class="submenu-item">Tea</div>
+                <div class="submenu-item">Smoothies</div>
+            </div>
+        </div>
+		
+		<div class="menu-item">
+            <img src="image/honeycomb.jpg" alt="honeycomb">
+			<h3>Student Special</h3>
+            <div class="submenu">
+                <div class="submenu-item">Coffee</div>
+                <div class="submenu-item">Tea</div>
+                <div class="submenu-item">Smoothies</div>
+            </div>
         </div>
     </div>
-</td>
-</tr>
-</table>
-	 <script>
-        let cart = [];
-
-        function addToCart(item, price) {
-            cart.push({ item, price });
-            updateCart();
-        }
-
-        function removeFromCart(index) {
-            cart.splice(index, 1);
-            updateCart();
-        }
-
-        function updateCart() {
-            const cartList = document.getElementById('cart-items');
-            const totalPriceEl = document.getElementById('total-price');
-            cartList.innerHTML = '';
-
-            let total = 0;
-            cart.forEach(({ item, price }, index) => {
-                const listItem = document.createElement('li');
-                const itemText = document.createElement('span');
-                itemText.textContent = `${item} - RM${price}`;
-
-                const removeButton = document.createElement('button');
-                removeButton.textContent = 'Remove';
-                removeButton.className = 'remove-from-cart';
-                removeButton.onclick = () => removeFromCart(index);
-
-                listItem.appendChild(itemText);
-                listItem.appendChild(removeButton);
-                cartList.appendChild(listItem);
-
-                total += price;
-            });
-
-            totalPriceEl.textContent = `Total: RM${total.toFixed(2)}`;
-        }
-
-        function checkout() {
-            if (cart.length === 0) {
-                alert('Your cart is empty. Please add items to your cart before checking out.');
-                return;
-            }
-
-            const paymentMethod = prompt('Enter your payment method (Cash / Credit / E-wallet):');
-            if (paymentMethod) {
-                alert(`Thank you for your purchase! You chose to pay with ${paymentMethod}.`);
-                cart = [];
-                updateCart();
-            }
-        }
-    </script>
-
+    <button class="order-button">Order Now</button>
+</body>
+	    
 <!-- Footer Section -->
 <footer>
   <table>

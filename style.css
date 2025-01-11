@@ -341,7 +341,105 @@ table .fa-star:hover ~ .fa-star {
     color: #FFC107;
   }
 
-
+/*Order Now, Add to Cart List Style*/
+        .menu {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .menu-section {
+            padding: 20px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        .menu-section:last-child {
+            border-bottom: none;
+        }
+        h2 {
+            color: #444;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #f1f1f1;
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+        .price {
+            color: #888;
+        }
+        .add-to-cart {
+            background-color: #f4d03f;
+            border: none;
+            color: #333;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .add-to-cart:hover {
+            background-color: #e2ba2c;
+        }
+        .remove-from-cart {
+            background-color: #e74c3c;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .remove-from-cart:hover {
+            background-color: #c0392b;
+        }
+        .cart {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .cart h2 {
+            margin-bottom: 10px;
+        }
+        .cart-items {
+            list-style: none;
+            padding: 0;
+        }
+        .cart-items li {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #f1f1f1;
+        }
+        .cart-items li:last-child {
+            border-bottom: none;
+        }
+        .checkout {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .checkout button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .checkout button:hover {
+            background-color: #45a049;
+        }
 
 
 

@@ -9,97 +9,143 @@
   
 </head>
 <body>
+head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+		
+		table {
+            max-width: 1200px;
+            margin: 10px auto;
+            border-collapse: collapse;
+            width: 100%;
+            text-align: center;
+        }
 
-<table>
-  <tr>
-    <!-- Header -->
-    <td colspan="3" class="header">
-      <h1>Buttercup Café<span>.</span></h1>
-      <p>Your Daily Pitstop</p>
-    </td>
-  </tr>
+        .menu-container {
+            max-width: 1200px;
+            margin: 10px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 100px;
+            padding: 10px;
+        }
 
-  <tr>
-    <!-- Navigation -->
-    <td colspan="3" class="nav">
-	  <a href="index.html">Home</a>
-	  <a href="menu.html">Menu</a>
-	  <a href="feedbacks.html">Feedbacks</a>
-	  <a href="about.html">About Us</a>
-	  <a href="contact.html">Contact Us</a>
-    </td>
-  </tr>
+        .menu-item {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.2s;
+        }
 
-<tr>
-  <!-- Body -->
-  <td colspan="3" class="body">
-    <!-- Student-Friendly Menu -->
-    <div class="menu-section">
-      <h3>Buttercup Café Student-Friendly Menu</h3>
-      <p><i>Affordable bites and drinks for students! Just show your student ID.</i></p>
-      
-      <h4>Coffee & Espresso</h4>
-      <ul>
-        <li>Espresso – RM3.00</li>
-        <li>Americano – RM4.00</li>
-        <li>Cappuccino – RM5.00</li>
-        <li>Latte – RM6.00</li>
-        <li>Mocha – RM7.00</li>
-      </ul>
-      
-      <h4>Tea & Refreshments</h4>
-      <ul>
-        <li>English Breakfast Tea – RM4.00</li>
-        <li>Green Tea – RM4.00</li>
-        <li>Iced Lemon Tea – RM5.00</li>
-        <li>Hot Chocolate – RM6.00</li>
-      </ul>
-      
-      <h4>Student Specials</h4>
-      <ul>
-        <li>ButterCup Cold Brew – RM6.00</li>
-                <li>Honeycomb Latte – RM8.00</li>
-        <li>Signature Affogato – RM9.00</li>
-      </ul>
-    </div>
-  </td>
-</tr>
+        .menu-item:hover {
+            transform: scale(1.05);
+        }
 
-<tr>
-	<!-- Back to Top Link -->
-  <td colspan="3" class="body">
-    <p align="center">
-        <a href="#top" class="jump-to-top">Back to Top</a>
-    </p>
-  </td>
-</tr>
+        .menu-item img {
+            height: 250px;
+			width: 350px;
+            object-fit: cover;
+        }
 
+        .menu-item h3 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
 
-</table>
+        .menu-item .new-badge {
+            position: absolute;
+            background: red;
+            color: white;
+            padding: 5px 10px;
+            font-size: 12px;
+            border-radius: 5px;
+            top: 10px;
+            left: 10px;
+        }
 
-<!-- Footer Section -->
-<footer>
-  <table>
-    <tr>
-      <!-- Left Footer Content -->
-      <td style="width: 60%; color:white;">
-        <p>&copy; 2025 | Design by Buttercup Café. All rights reserved</p>
-        <p><a href="mailto:nurdiyanahnabila@gmail.com">Email me</a></p>
-      </td>
+        .order-button {
+            display: block;
+            background-color: #ff4500;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            margin: 30px auto;
+            width: fit-content;
+        }
 
-      <!-- Social Media Links -->
-      <td style="width: 40%; text-align: right;">
-        <a href="https://www.instagram.com/diyanahnabila/profilecard/?igsh=MWdldW8wMHAzYW9iOQ==" target="_blank">
-          <img src="images/insta.jpeg" alt="Instagram">
-        </a>
-        <a href="https://www.tiktok.com/@pistchiourrna?_t=ZS-8spkh1mVpIu&_r=1" target="_blank">
-          <img src="images/tiktok.jpeg" alt="TikTok">
-        </a>
-      </td>
-    </tr>
-  </table>
-</footer>
-
+        .order-button:hover {
+            background-color: #e63900;
+        }
+    </style>
+</head>
+<body>
+	
+	<table>
+	<tr>
+		<h1 style="text-align: center; margin-top: 20px;">Buttercup Café Student-Friendly Menu</h1>
+		<p align="center"><i>Affordable bites and drinks for students! Just show your student ID.</i></p>
+	
+		<div class="menu-container">
+		   
+			<tr>
+				<td> 
+					<div class="menu-item">
+						<span class="new-badge">NEW</span>
+						<img src="image/chocolate cake.jpg" alt="chocolate cake">
+						<h3>Desserts</h3>
+					</div>
+				</td>
+				
+				<td>
+					<div class="menu-item">
+						<img src="image/coffee2.jpg" alt="coffee2">
+						<h3>Coffee & Espresso</h3>
+					</div>
+			   </td>
+				
+				<td>
+					<div class="menu-item">
+						<span class="new-badge">NEW</span>
+						<img src="image/pasta.jpg" alt="pasta">
+						<h3>Pasta</h3>
+					</div>
+				</td>
+		   </tr>
+		   
+		   <tr>
+			   <td>
+					<div class="menu-item">
+						<img src="image/ice lemon tea.jpg" alt="ice lemon tea">
+						<h3>Tea & Refeshment</h3>
+					</div>
+				</td>
+				
+				<td>
+					<div class="menu-item">
+						<span class="new-badge">NEW</span>
+						<img src="image/honeycomb.jpg" alt="honeycomb">
+						<h3>Student Special</h3>
+					</div>
+				</td>
+			</tr>
+		</div>
+	</tr>
+	</table>
 </body>
 </html>
 

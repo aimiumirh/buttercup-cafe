@@ -83,6 +83,59 @@
     </div>
 </tr>
 </table>
+	 <script>
+        let cart = [];
+
+        function addToCart(item, price) {
+            cart.push({ item, price });
+            updateCart();
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartList = document.getElementById('cart-items');
+            const totalPriceEl = document.getElementById('total-price');
+            cartList.innerHTML = '';
+
+            let total = 0;
+            cart.forEach(({ item, price }, index) => {
+                const listItem = document.createElement('li');
+                const itemText = document.createElement('span');
+                itemText.textContent = `${item} - RM${price}`;
+
+                const removeButton = document.createElement('button');
+                removeButton.textContent = 'Remove';
+                removeButton.className = 'remove-from-cart';
+                removeButton.onclick = () => removeFromCart(index);
+
+                listItem.appendChild(itemText);
+                listItem.appendChild(removeButton);
+                cartList.appendChild(listItem);
+
+                total += price;
+            });
+
+            totalPriceEl.textContent = `Total: RM${total.toFixed(2)}`;
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Your cart is empty. Please add items to your cart before checking out.');
+                return;
+            }
+
+            const paymentMethod = prompt('Enter your payment method (Cash / Credit / E-wallet):');
+            if (paymentMethod) {
+                alert(`Thank you for your purchase! You chose to pay with ${paymentMethod}.`);
+                cart = [];
+                updateCart();
+            }
+        }
+    </script>
 
 <!-- Footer Section -->
 <footer>

@@ -6,141 +6,156 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="images/logo.jpg" type="image/jpg" sizes="16x16"> <!-- Favicon -->
   <link rel="stylesheet" href="hover.css" type="text/css"> <!-- Hover Effects CSS -->
-	<title>Menu</title>
-	
+  
+</head>
 <body>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-        }
-		
-		table {
-            max-width: 1200px;
-            margin: 10px auto;
-            border-collapse: collapse;
-            width: 100%;
-            text-align: center;
+
+<table>
+  <tr>
+    <!-- Header -->
+    <td colspan="3" class="header">
+      <h1>Buttercup Café<span>.</span></h1>
+      <p>Your Daily Pitstop</p>
+    </td>
+  </tr>
+
+  <tr>
+    <!-- Navigation -->
+    <td colspan="3" class="nav">
+	  <a href="index.html">Home</a>
+	  <a href="menu.html">Menu</a>
+	  <a href="feedbacks.html">Feedbacks</a>
+	  <a href="about.html">About Us</a>
+	  <a href="contact.html">Contact Us</a>
+    </td>
+  </tr>
+
+
+<tr>
+  <!-- Body -->
+  <td colspan="3" class="body">
+    <!-- Student-Friendly Menu -->
+    <div class="menu-section">
+      <h3>Buttercup Café Student-Friendly Menu</h3>
+      <p><i>Affordable bites and drinks for students! Just show your student ID.</i></p>
+      
+      <h4>Coffee & Espresso</h4>
+      <ul>
+        <li><span>Espresso</span> <span class="price">RM3.00</span> <button class="add-to-cart" onclick="addToCart('Espresso', 3.00)">Add to Cart</button></li>
+        <li><span>Americano</span> <span class="price">RM4.00</span> <button class="add-to-cart" onclick="addToCart('Americano', 4.00)">Add to Cart</button></li>
+        <li><span>Cappuccino</span> <span class="price">RM5.00</span> <button class="add-to-cart" onclick="addToCart('Cappuccino', 5.00)">Add to Cart</button></li>
+        <li><span>Latte</span> <span class="price">RM6.00</span> <button class="add-to-cart" onclick="addToCart('Latte', 6.00)">Add to Cart</button></li>
+        <li><span>Mocha</span> <span class="price">RM7.00</span> <button class="add-to-cart" onclick="addToCart('Mocha', 7.00)">Add to Cart</button></li>
+      </ul>
+      
+      <h4>Tea & Refreshments</h4>
+      <ul>
+        <li><span>English Breakfast Tea</span> <span class="price">RM4.00</span> <button class="add-to-cart" onclick="addToCart('English Breakfast Tea', 4.00)">Add to Cart</button></li>
+        <li><span>Green Tea</span> <span class="price">RM4.00</span> <button class="add-to-cart" onclick="addToCart('Green Tea', 4.00)">Add to Cart</button></li>
+        <li><span>Iced Lemon Tea</span> <span class="price">RM5.00</span> <button class="add-to-cart" onclick="addToCart('Iced Lemon Tea', 5.00)">Add to Cart</button></li>
+        <li><span>Hot Chocolate</span> <span class="price">RM6.00</span> <button class="add-to-cart" onclick="addToCart('Hot Chocolate', 6.00)">Add to Cart</button></li>
+      </ul>
+      
+      <h4>Student Specials</h4>
+      <ul>
+       <li><span>ButterCup Cold Brew</span> <span class="price">RM6.00</span> <button class="add-to-cart" onclick="addToCart('ButterCup Cold Brew', 6.00)">Add to Cart</button></li>
+       <li><span>Honeycomb Latte</span> <span class="price">RM8.00</span> <button class="add-to-cart" onclick="addToCart('Honeycomb Latte', 8.00)">Add to Cart</button></li>
+       <li><span>Signature Affogato</span> <span class="price">RM9.00</span> <button class="add-to-cart" onclick="addToCart('Signature Affogato', 9.00)">Add to Cart</button></li>
+      </ul>
+    </div>
+  </td>
+</tr>
+<tr>
+<td>
+  <div class="cart">
+        <h2>Order Cart</h2>
+        <ul id="cart-items" class="cart-items">
+            <!-- Items will be dynamically added here -->
+        </ul>
+        <p id="total-price">Total: RM0.00</p>
+        <div class="checkout">
+            <button onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+</td>
+</tr>
+</table>
+	 <script>
+        let cart = [];
+
+        function addToCart(item, price) {
+            cart.push({ item, price });
+            updateCart();
         }
 
-        .menu-container {
-            max-width: 1200px;
-            margin: 10px auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 100px;
-            padding: 10px;
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
         }
 
-        .menu-item {
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: transform 0.2s;
+        function updateCart() {
+            const cartList = document.getElementById('cart-items');
+            const totalPriceEl = document.getElementById('total-price');
+            cartList.innerHTML = '';
+
+            let total = 0;
+            cart.forEach(({ item, price }, index) => {
+                const listItem = document.createElement('li');
+                const itemText = document.createElement('span');
+                itemText.textContent = `${item} - RM${price}`;
+
+                const removeButton = document.createElement('button');
+                removeButton.textContent = 'Remove';
+                removeButton.className = 'remove-from-cart';
+                removeButton.onclick = () => removeFromCart(index);
+
+                listItem.appendChild(itemText);
+                listItem.appendChild(removeButton);
+                cartList.appendChild(listItem);
+
+                total += price;
+            });
+
+            totalPriceEl.textContent = `Total: RM${total.toFixed(2)}`;
         }
 
-        .menu-item:hover {
-            transform: scale(1.05);
-        }
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Your cart is empty. Please add items to your cart before checking out.');
+                return;
+            }
 
-        .menu-item img {
-            height: 250px;
-			width: 350px;
-            object-fit: cover;
+            const paymentMethod = prompt('Enter your payment method (Cash / Credit / E-wallet):');
+            if (paymentMethod) {
+                alert(`Thank you for your purchase! You chose to pay with ${paymentMethod}.`);
+                cart = [];
+                updateCart();
+            }
         }
+    </script>
 
-        .menu-item h3 {
-            font-size: 18px;
-            margin: 10px 0;
-        }
+<!-- Footer Section -->
+<footer>
+  <table>
+    <tr>
+      <!-- Left Footer Content -->
+      <td style="width: 60%; color:white;">
+        <p>&copy; 2025 | Design by Buttercup Café. All rights reserved</p>
+        <p><a href="mailto:nurdiyanahnabila@gmail.com">Email me</a></p>
+      </td>
 
-        .menu-item .new-badge {
-            position: absolute;
-            background: red;
-            color: white;
-            padding: 5px 10px;
-            font-size: 12px;
-            border-radius: 5px;
-            top: 10px;
-            left: 10px;
-        }
+      <!-- Social Media Links -->
+      <td style="width: 40%; text-align: right;">
+        <a href="https://www.instagram.com/diyanahnabila/profilecard/?igsh=MWdldW8wMHAzYW9iOQ==" target="_blank">
+          <img src="images/insta.jpeg" alt="Instagram">
+        </a>
+        <a href="https://www.tiktok.com/@pistchiourrna?_t=ZS-8spkh1mVpIu&_r=1" target="_blank">
+          <img src="images/tiktok.jpeg" alt="TikTok">
+        </a>
+      </td>
+    </tr>
+  </table>
+</footer>
 
-        .order-button {
-            display: block;
-            background-color: #ff4500;
-            color: white;
-            border: none;
-            padding: 15px 20px;
-            font-size: 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            text-align: center;
-            margin: 30px auto;
-            width: fit-content;
-        }
-
-        .order-button:hover {
-            background-color: #e63900;
-        }
-    </style>
-
-	
-	<table>
-	<tr>
-		<h1 style="text-align: center; margin-top: 20px;">Buttercup Café Student-Friendly Menu</h1>
-		<p align="center"><i>Affordable bites and drinks for students! Just show your student ID.</i></p>
-	
-		<div class="menu-container">
-		   
-			<tr>
-				<td> 
-					<div class="menu-item">
-						<span class="new-badge">NEW</span>
-						<img src="image/chocolate cake.jpg" alt="chocolate cake">
-						<h3>Desserts</h3>
-					</div>
-				</td>
-				
-				<td>
-					<div class="menu-item">
-						<img src="image/coffee2.jpg" alt="coffee2">
-						<h3>Coffee & Espresso</h3>
-					</div>
-			   </td>
-				
-				<td>
-					<div class="menu-item">
-						<span class="new-badge">NEW</span>
-						<img src="image/pasta.jpg" alt="pasta">
-						<h3>Pasta</h3>
-					</div>
-				</td>
-		   </tr>
-		   
-		   <tr>
-			   <td>
-					<div class="menu-item">
-						<img src="image/ice lemon tea.jpg" alt="ice lemon tea">
-						<h3>Tea & Refeshment</h3>
-					</div>
-				</td>
-				
-				<td>
-					<div class="menu-item">
-						<span class="new-badge">NEW</span>
-						<img src="image/honeycomb.jpg" alt="honeycomb">
-						<h3>Student Special</h3>
-					</div>
-				</td>
-			</tr>
-		</div>
-	</tr>
-	</table>
 </body>
 </html>
-

@@ -13,7 +13,7 @@ table {
 /* Header Section Styles */
 .header {
   background-color: #e9d8a6; /* Warm beige for a welcoming header */
-  color: #e9d8a6; /* Deep brown for text */
+  color: white;
   text-align: center;
   padding: 20px;
 }

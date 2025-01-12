@@ -586,14 +586,14 @@ table .fa-star:hover ~ .fa-star {
   }
 
   .jump-to-top:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #544009;
     color: #fff; /* Ensure white text */
     transform: scale(1.1); /* Slight zoom effect */
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
   }
 
   .jump-to-top:active {
-    background-color: #003f7f; /* Even darker blue on click */
+    background-color: #483a12;
     transform: scale(0.95); /* Pressed effect */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle pressed shadow */
   }

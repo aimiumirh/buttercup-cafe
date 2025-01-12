@@ -13,7 +13,7 @@ table {
 /* Header Section Styles */
 .header {
   background-color: #e9d8a6; /* Warm beige for a welcoming header */
-  color: #4a3320; /* Deep brown for text */
+  color: #e9d8a6; /* Deep brown for text */
   text-align: center;
   padding: 20px;
 }
@@ -190,7 +190,7 @@ footer {
         }
 
         .menu-item {
-            margin: 0px 0;
+            margin: 20px 0;
             display: flex;
             justify-content: space-between;
             font-size: 14px;

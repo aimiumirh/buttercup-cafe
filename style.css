@@ -135,53 +135,89 @@ footer {
 
 /* Additional Styling for Better Presentation */
 /* Additional Styling for Better Presentation */
-.menu-section {
-  background-color: #fefae0; /* Soft cream for a welcoming menu section */
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for elegance */
-  text-align: left;
-  color: #4a3320; /* Deep brown text for readability */
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-}
+ body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
 
-.menu-section h3 {
-  text-align: center;
-  font-size: 1.8em;
-  margin-bottom: 10px;
-  color: #7a5531; /* Earthy brown for headers */
-}
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            color: #333;
+        }
 
-.menu-item img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
+        .menu-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Exactly 3 columns per row */
+            gap: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
-.menu-item:hover img {
-    transform: scale(1.1); /* Zoom in */
-    opacity: 0.8; /* Reduce opacity */
-}
+        .menu-category {
+            text-align: center;
+            background: #f4f4f4;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
-.menu-section h4 {
-  margin-top: 15px;
-  color: #cb997e; /* Muted pink for category titles */
-  font-size: 1.4em;
-}
+        .menu-category img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
 
-.menu-section ul {
-  list-style: none;
-  padding: 0;
-}
+        .menu-category h3 {
+            color: #ff4500;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
 
-.menu-section ul li {
-  margin-bottom: 5px;
-  padding: 5px;
-  border-bottom: 1px solid #705e4f; /* Subtle muted brown for dividers */
-}
+        .menu-items {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+        }
+
+        .menu-item {
+            margin: 5px 0;
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+
+        .menu-item span {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .menu-category:hover {
+            transform: scale(1.02);
+            transition: transform 0.2s ease;
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 768px) {
+            .menu-container {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .menu-container {
+                grid-template-columns: repeat(1, 1fr); /* 1 column for small screens */
+            }
+        }
 
 /*background-image*/
   .header {

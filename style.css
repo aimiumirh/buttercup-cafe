@@ -21,7 +21,7 @@ table {
 
 /* Navigation Section Styles */
 .nav {
-  background-color: #3d3b36; /* Rich dark brown for a cozy feel */
+  background-color: #7b6230;
   color: #fafaf7; /* Off-white text for better contrast */
   text-align: center;
   padding: 10px 0;
@@ -35,7 +35,7 @@ table {
 }
 
 .nav a:hover {
-  background-color: #705e4f; /* Muted coffee color for hover effect */
+  background-color: #7b6230;
   border-radius: 5px;
 }
 

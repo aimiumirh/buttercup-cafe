@@ -185,7 +185,7 @@ footer {
 
 /*background-image*/
   .header {
-    background-image: url('images/bg.png');
+    background-image: url('bg.png');
     background-size: cover;
     background-position: center;
     text-align: center;

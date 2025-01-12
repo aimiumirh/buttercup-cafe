@@ -534,6 +534,34 @@ table .fa-star:hover ~ .fa-star {
         .order-button:hover {
             background-color: #e63900;
         }
+/* Top Page */
+<style>
+  .jump-to-top {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF; /* Primary blue */
+    color: #fff; /* White text */
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none; /* Remove underline */
+    border-radius: 25px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: all 0.3s ease; /* Smooth hover transition */
+  }
+
+  .jump-to-top:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    color: #fff; /* Ensure white text */
+    transform: scale(1.1); /* Slight zoom effect */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+  }
+
+  .jump-to-top:active {
+    background-color: #003f7f; /* Even darker blue on click */
+    transform: scale(0.95); /* Pressed effect */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle pressed shadow */
+  }
+</style>
 
 	
 

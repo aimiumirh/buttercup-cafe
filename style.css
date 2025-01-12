@@ -133,7 +133,7 @@ footer {
   margin-top: auto; /* Push the footer to the bottom */
 }
 
-/* Additional Styling for Better Presentation */
+
 /* Additional Styling for Better Presentation */
  body {
             font-family: Arial, sans-serif;
@@ -153,8 +153,8 @@ footer {
             grid-template-columns: repeat(3, 1fr); /* Exactly 3 columns per row */
             gap: 20px;
             max-width: 1200px;
-            margin: 40px auto;
-            padding: 40px;
+            margin: 20px auto;
+            padding: 20px;
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -190,7 +190,7 @@ footer {
         }
 
         .menu-item {
-            margin: 5px 0;
+            margin: 20px 0;
             display: flex;
             justify-content: space-between;
             font-size: 14px;

@@ -148,7 +148,7 @@ footer {
             color: #333;
         }
 
-        .menu-container {
+        .menu-box {
             display: grid;
             grid-template-columns: repeat(3, 1fr); /* Exactly 3 columns per row */
             gap: 20px;

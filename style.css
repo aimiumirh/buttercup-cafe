@@ -191,7 +191,7 @@ footer {
         }
 
         .menu-item {
-            margin-right: 5px; /* Add space between price and menu-item*/
+            margin-right: 60px; /* Add space between price and menu-item*/
             display: flex;
             justify-content: space-between;
             font-size: 14px;

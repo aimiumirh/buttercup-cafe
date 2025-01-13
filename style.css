@@ -194,7 +194,7 @@ footer {
         .menu-item span {
             font-weight: bold;
             color: #333;
-	    margin-left: 250px; /* Add space between price and menu-item*/
+	    margin-left: 0px; /* Add space between price and menu-item*/
 	    justify-content: space-between;
         }
 

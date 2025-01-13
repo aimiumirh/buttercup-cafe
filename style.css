@@ -181,13 +181,7 @@ footer {
             color: #ff4500;
             font-size: 18px;
             margin-bottom: 10px;
-        }
 
-        .menu-items {
-            list-style: none;
-            padding: 0;
-            margin: 10px;
-            text-align: left;
         }
 
         .menu-item {

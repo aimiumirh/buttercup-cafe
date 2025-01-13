@@ -420,12 +420,24 @@ table .fa-star:hover ~ .fa-star {
             padding: 8px 0;
             border-bottom: 1px solid #f1f1f1;
         }
+
+        li span {
+        flex: 1;
+        text-align: left; /* Ensures item names align left */
+        }
+
         li:last-child {
             border-bottom: none;
         }
+
         .price {
-            color: #888;
+             flex: 0;
+	     width: 80px; /* adjust width to desired size */
+             color: #888;
+	     text-align: left;
+             margin-right: 250px; /* Add space between price and button */
         }
+
         .add-to-cart {
             background-color: #f4d03f;
             border: none;
